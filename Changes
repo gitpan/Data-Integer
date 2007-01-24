@@ -1,3 +1,11 @@
+version 0.001; 2007-01-24
+
+  * bugfix: strategic use of "use integer" to make the arithmetic work
+    right on perl 5.6
+
+  * reference Data::Float, Scalar::Number, and perlnumber(1) in
+    documentation
+
 version 0.000; 2007-01-09
 
   * initial released version

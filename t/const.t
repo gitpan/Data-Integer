@@ -9,12 +9,16 @@ BEGIN { use_ok "Data::Integer", qw(
 ok int(natint_bits) == natint_bits;
 ok natint_bits >= 16;
 
+use integer;
+
 my $a = -1;
 for(my $i = natint_bits-1; $i--; ) { $a += $a; }
 is $a, min_signed_natint;
 is $a, min_natint;
 
 is min_signed_natint + max_signed_natint, -1;
+
+no integer;
 
 is min_unsigned_natint, 0;
 

@@ -27,7 +27,7 @@ package Data::Integer;
 use warnings;
 use strict;
 
-our $VERSION = "0.000";
+our $VERSION = "0.001";
 
 use base "Exporter";
 our @EXPORT_OK = qw(
@@ -97,12 +97,18 @@ eval do { local $/; <DATA>; } or die $@;
 __DATA__
 local $SIG{__DIE__};
 
-use constant max_signed_natint => -(min_signed_natint + 1);
+use constant max_signed_natint => do { use integer; ~min_signed_natint };
 use constant min_unsigned_natint => 0;
 use constant max_unsigned_natint => max_signed_natint + max_signed_natint + 1;
 
 *min_natint = \&min_signed_natint;
 *max_natint = \&max_unsigned_natint;
+
+=head1 SEE ALSO
+
+L<Data::Float>,
+L<Scalar::Number>,
+L<perlnumber(1)>
 
 =head1 AUTHOR
 
