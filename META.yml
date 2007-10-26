@@ -1,6 +1,6 @@
 ---
 name: Data-Integer
-version: 0.002
+version: 0.003
 author:
   - 'Andrew Main (Zefram) <zefram@fysh.org>'
 abstract: details of the native integer data type
@@ -8,6 +8,7 @@ license: perl
 resources:
   license: http://dev.perl.org/licenses/
 requires:
+  Carp: 0
   Exporter: 0
   base: 0
   constant: 0
@@ -26,7 +27,7 @@ dynamic_config: 0
 provides:
   Data::Integer:
     file: lib/Data/Integer.pm
-    version: 0.002
+    version: 0.003
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

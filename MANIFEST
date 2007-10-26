@@ -6,7 +6,14 @@ META.yml
 Makefile.PL
 README
 lib/Data/Integer.pm
+t/arith.t
+t/bitwise.t
+t/canon.t
 t/const.t
+t/fmt.t
+t/hex.t
+t/marith.t
 t/pod_cvg.t
 t/pod_syn.t
+t/shift.t
 SIGNATURE    Added here by Module::Build
