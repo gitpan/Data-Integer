@@ -1,3 +1,6 @@
+use warnings;
+use strict;
+
 use Test::More tests => 1 + 4*4 + (4*8 + 4*8 + 2*8)*2 + 4*8 + 4*8 + 4*5;
 
 BEGIN { use_ok "Data::Integer", qw(
@@ -182,3 +185,5 @@ foreach([ 0, 0, 0, 0 ],
 	nint_is sint_mux($sa, $sb, $sc), $sr;
 	nint_is sint_mux(do { use integer; ~$sa }, $sc, $sb), $sr;
 }
+
+1;

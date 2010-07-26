@@ -1,3 +1,6 @@
+use warnings;
+use strict;
+
 use Test::More tests => 116;
 
 BEGIN { use_ok "Data::Integer", qw(natint_hex hex_natint natint_bits); }
@@ -111,3 +114,5 @@ for(my $i = 1; $i != 16; $i++) {
 	eval { hex_natint("-".$over_digit.("0" x $tail_digits)) };
 	like $@, qr/\Ainteger value too large/;
 }
+
+1;

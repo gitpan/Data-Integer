@@ -1,3 +1,27 @@
+version 0.004; 2010-07-26
+
+  * in documentation of {s,u}int_msub(), correct description that said
+    "addition" instead of "subtraction"
+
+  * in synopsis, correct number of parameters for {s,u}int_mux()
+
+  * use simpler "parent" pragma in place of "base"
+
+  * in documentation, use the term "truth value" instead of the less
+    precise "boolean"
+
+  * check for required Perl version at runtime
+
+  * use full stricture in test suite
+
+  * use full stricture in Build.PL
+
+  * in Build.PL, explicitly declare configure-time requirements
+
+  * remove bogus "exit 0" from Build.PL
+
+  * add MYMETA.yml to .cvsignore
+
 version 0.003; 2007-10-26
 
   * add natint_hex() and hex_natint() functions to output and input

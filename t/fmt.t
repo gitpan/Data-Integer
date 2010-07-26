@@ -1,3 +1,6 @@
+use warnings;
+use strict;
+
 use Test::More tests => 1 + 4*5 + 6*4;
 
 BEGIN { use_ok "Data::Integer", qw(
@@ -36,3 +39,5 @@ foreach([ -1, max_uint ],
 	nint_is sint_bits_as_uint($si), $ui;
 	nint_is uint_bits_as_sint($ui), $si;
 }
+
+1;

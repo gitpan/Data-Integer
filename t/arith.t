@@ -1,3 +1,6 @@
+use warnings;
+use strict;
+
 use Test::More tests => 1 + 3*14*14 + 3*11*11 + 3*9*9 + 108 + 1749;
 
 BEGIN { use_ok "Data::Integer", qw(
@@ -390,3 +393,5 @@ foreach([ undef, max_uint, min_sint ],
 		}
 	}
 }
+
+1;

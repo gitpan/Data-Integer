@@ -1,3 +1,6 @@
+use warnings;
+use strict;
+
 use Test::More tests => 18;
 
 BEGIN { use_ok "Data::Integer", qw(
@@ -47,3 +50,5 @@ nint_is max_uint, $max_uint;
 nint_is max_unsigned_natint, $max_uint;
 nint_is max_nint, $max_uint;
 nint_is max_natint, $max_uint;
+
+1;

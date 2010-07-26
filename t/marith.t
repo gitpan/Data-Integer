@@ -1,3 +1,6 @@
+use warnings;
+use strict;
+
 use Test::More tests => 1 + 8*86 + 8*98 + 8*86 + 2*49 + 2*43 + 1*92 + 1*89;
 
 BEGIN { use_ok "Data::Integer", qw(
@@ -633,3 +636,5 @@ foreach([ 0, 0, 0 ],
 	my($a, $b, $c) = @$_;
 	nint_is uint_ssub($a, $b), $c;
 }
+
+1;

@@ -1,3 +1,6 @@
+use warnings;
+use strict;
+
 use Test::More tests => 1 + 2*21 + 1*17 + 1*17 + 4*21;
 
 BEGIN { use_ok "Data::Integer", qw(
@@ -126,3 +129,5 @@ foreach([ 0, 0, 0 ],
 	nint_is sint_rol($sa, $ldist), $sr;
 	nint_is sint_ror($sa, $rdist), $sr;
 }
+
+1;

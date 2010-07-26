@@ -1,3 +1,6 @@
+use warnings;
+use strict;
+
 use Test::More tests => 1 + 5*16 + 3*3;
 
 BEGIN { use_ok "Data::Integer", qw(
@@ -53,3 +56,5 @@ foreach(0.5, max_uint*3/2, min_sint*3/2) {
 	eval { sint($_) }; like $@, qr/\Anot a signed native integer/;
 	eval { uint($_) }; like $@, qr/\Anot an unsigned native integer/;
 }
+
+1;

@@ -111,8 +111,8 @@ Data::Integer - details of the native integer data type
 	$ui = uint_xor($ua, $ub);
 	$si = sint_nxor($sa, $sb);
 	$ui = uint_nxor($ua, $ub);
-	$si = sint_mux($sa, $sb);
-	$ui = uint_mux($ua, $ub);
+	$si = sint_mux($sa, $sb, $sc);
+	$ui = uint_mux($ua, $ub, $uc);
 
 	use Data::Integer qw(
 		sint_madd uint_madd
@@ -179,14 +179,15 @@ numbers in arithmetic, at some extra expense.
 
 package Data::Integer;
 
+{ use 5.006; }
 use warnings;
 use strict;
 
 use Carp qw(croak);
 
-our $VERSION = "0.003";
+our $VERSION = "0.004";
 
-use base "Exporter";
+use parent "Exporter";
 our @EXPORT_OK = qw(
 	natint_bits
 	min_nint max_nint min_natint max_natint
@@ -410,7 +411,7 @@ sub uint($) {
 
 =item nint_is_sint(A)
 
-Takes a native integer of either type.  Returns a Boolean indicating
+Takes a native integer of either type.  Returns a truth value indicating
 whether this value can be exactly represented as a signed native integer.
 
 =cut
@@ -423,7 +424,7 @@ sub nint_is_sint($) {
 
 =item nint_is_uint(A)
 
-Takes a native integer of either type.  Returns a Boolean indicating
+Takes a native integer of either type.  Returns a truth value indicating
 whether this value can be exactly represented as an unsigned native
 integer.
 
@@ -1134,7 +1135,7 @@ sub uint_madd($$) { 0 | do { use integer; uint($_[0]) + uint($_[1]) } }
 
 =item uint_msub(A, B)
 
-Modular addition.  The result for unsigned addition is (A - B)
+Modular subtraction.  The result for unsigned subtraction is (A - B)
 mod 2^natint_bits.  The signed version behaves similarly, but with a
 different result range.
 
@@ -1406,7 +1407,7 @@ Andrew Main (Zefram) <zefram@fysh.org>
 
 =head1 COPYRIGHT
 
-Copyright (C) 2007 Andrew Main (Zefram) <zefram@fysh.org>
+Copyright (C) 2007, 2010 Andrew Main (Zefram) <zefram@fysh.org>
 
 =head1 LICENSE
 

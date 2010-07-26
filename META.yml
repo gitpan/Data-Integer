@@ -1,21 +1,7 @@
 ---
-name: Data-Integer
-version: 0.003
+abstract: 'details of the native integer data type'
 author:
   - 'Andrew Main (Zefram) <zefram@fysh.org>'
-abstract: details of the native integer data type
-license: perl
-resources:
-  license: http://dev.perl.org/licenses/
-requires:
-  Carp: 0
-  Exporter: 0
-  base: 0
-  constant: 0
-  integer: 0
-  perl: 5.006
-  strict: 0
-  warnings: 0
 build_requires:
   Module::Build: 0
   Test::More: 0
@@ -23,13 +9,32 @@ build_requires:
   perl: 5.006
   strict: 0
   warnings: 0
+configure_requires:
+  Module::Build: 0
+  perl: 5.006
+  strict: 0
+  warnings: 0
+distribution_type: module
 dynamic_config: 0
+generated_by: 'Module::Build version 0.3607'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Data-Integer
 provides:
   Data::Integer:
     file: lib/Data/Integer.pm
-    version: 0.003
-generated_by: Module::Build version 0.2808
-meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
-distribution_type: module
+    version: 0.004
+requires:
+  Carp: 0
+  Exporter: 0
+  constant: 0
+  integer: 0
+  parent: 0
+  perl: 5.006
+  strict: 0
+  warnings: 0
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.004
